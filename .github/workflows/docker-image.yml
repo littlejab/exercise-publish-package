@@ -32,8 +32,12 @@ jobs:
         tags: |
           type=sha,format=long,prefix=
 
-    - run: echo Your current working directory is $GITHUB_WORKSPACE
-    - run: ls
+    - name : Print working directory
+      run: echo Your current working directory is $GITHUB_WORKSPACE
+      
+    - name: List files in the repository
+      run: |
+        ls ${{ github.workspace }}
     - name: Build and push Docker image
       uses: docker/build-push-action@v3
       with:
