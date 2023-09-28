@@ -33,7 +33,7 @@ jobs:
           type=sha,format=long,prefix=
 
     - run: echo Your current working directory is $GITHUB_WORKSPACE
-    - run: tree
+    - run: ls
     - name: Build and push Docker image
       uses: docker/build-push-action@v3
       with:
